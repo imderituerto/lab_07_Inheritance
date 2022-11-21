@@ -1,11 +1,13 @@
 public abstract class BakedGoods {
 
-    private String name;
+   protected String name;
     private String baseFlavour;
+    protected int ovenTemp;
 
-    public BakedGoods(String name, String baseFlavour){
+    public BakedGoods(String name, String baseFlavour, int ovenTemp){
         this.baseFlavour = baseFlavour;
         this.name = name;
+        this.ovenTemp = ovenTemp;
     }
 
     public String getName(){
@@ -20,5 +22,8 @@ public abstract class BakedGoods {
     }
     public void setBaseFlavour(){
         this.baseFlavour = baseFlavour;
+    }
+    public String ovenTemp(){
+        return String.format("Bake me at %s!", this.ovenTemp);
     }
 }
