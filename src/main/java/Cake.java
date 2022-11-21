@@ -8,9 +8,19 @@ public class Cake extends Icing{
     }
 
     // Overriding option for cakes that don't need to be oven-baked
-    public String ovenTemp(){
-        return String.format("I'm a no bake cake :)");
+    public String getOvenTemp(){
+        if(ovenTemp == 0) {
+            return "I'm a no-bake cake :)";
+        } return String.format("Bake me at %s!", this.ovenTemp);
+    }
+    public void setOvenTemp(int ovenTemp){
+        this.ovenTemp = ovenTemp;
     }
 
-    //TODO getters & setters for "layers" property
+    public int getLayers(){
+        return this.layer = layer;
+    }
+    public void setLayers(int layers){
+        this.layer = layers;
+    }
 }

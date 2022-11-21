@@ -9,5 +9,22 @@ public class Cookie extends BakedGoods{
         this.nuts = nuts;
     }
 
-    //TODO getters & setters for "healthier" and "nuts" properties
+    public String getHealthStatus(){
+        if(this.healthier == true) {
+            return "This is a healthy snack.";
+        } return "There are healthier alternatives.";
+    }
+
+    public void setHealthStatus(boolean healthier){
+        this.healthier = healthier;
+    }
+
+    public String getNutStatus(){
+        if(this.nuts == true){
+            return "Careful, this cookie contains nuts.";
+        } return "No nuts.";
+    }
+    public void setNutStatus(boolean nuts){
+        this.nuts = nuts;
+    }
 }

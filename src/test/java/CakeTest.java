@@ -1,24 +1,40 @@
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class CakeTest {
-    /*
-        /*
-        public String getName(){
-        return this.name;
-    }
-        public void setName(String newName){
-        this.name = newName;
+
+    Cake cake1;
+    Cake cake2;
+    Cake cake3;
+
+    @BeforeEach
+    public void setUp(){
+        cake1 = new Cake("Victoria sponge", "vanilla", 180, false, 3);
+        cake2 = new Cake("Birthday cake", "vanilla", 180, true, 5);
+        cake3 = new Cake("No-bake cake", "Chocolate",0,true, 2);
     }
 
-        public String getBaseFlavour(){
-        return this.baseFlavour;
+    @Test
+    public void canGetOvenTemp(){
+        String expected = cake3.getOvenTemp();
+        assertThat(expected).isEqualTo("I'm a no-bake cake :)");
     }
-        public void setBaseFlavour(String newBaseFlavour){
-        this.baseFlavour = newBaseFlavour;
-    }
-        public String getOvenTemp(){
-        return String.format("Bake me at %s!", this.ovenTemp);
+    @Test
+    public void canSetOvenTemp(){
+        cake3.setOvenTemp(200);
+        assertThat(cake3.getOvenTemp()).isEqualTo("Bake me at 200!");
     }
 
-        canGetLayers/canSetLayers
-
-     */
+    @Test
+    public void canGetLayers(){
+        int expected = cake1.getLayers();
+        assertThat(expected).isEqualTo(3);
+    }
+    @Test
+    public void canSetLayers(){
+        cake1.setLayers(2);
+        assertThat(cake1.getLayers()).isEqualTo(2);
+    }
 }
