@@ -9,5 +9,6 @@ public class Cupcake extends Icing{
         this.toppings = new ArrayList<String>();
     }
 
+    //TODO getters & setters for "toppings" property
 
 }

@@ -13,17 +13,20 @@ public abstract class BakedGoods {
     public String getName(){
         return this.name;
     }
-    public void setName(){
-        this.name = name;
+    public void setName(String newName){
+        this.name = newName;
     }
 
     public String getBaseFlavour(){
         return this.baseFlavour;
     }
-    public void setBaseFlavour(){
-        this.baseFlavour = baseFlavour;
+    public void setBaseFlavour(String newBaseFlavour){
+        this.baseFlavour = newBaseFlavour;
     }
-    public String ovenTemp(){
+    public String getOvenTemp(){
         return String.format("Bake me at %s!", this.ovenTemp);
+    }
+    public void setOvenTemp(int newOvenTemp){
+        this.ovenTemp = newOvenTemp;
     }
 }

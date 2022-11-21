@@ -9,4 +9,5 @@ public class Cookie extends BakedGoods{
         this.nuts = nuts;
     }
 
+    //TODO getters & setters for "healthier" and "nuts" properties
 }

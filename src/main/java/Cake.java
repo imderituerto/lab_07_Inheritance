@@ -11,4 +11,6 @@ public class Cake extends Icing{
     public String ovenTemp(){
         return String.format("I'm a no bake cake :)");
     }
+
+    //TODO getters & setters for "layers" property
 }
