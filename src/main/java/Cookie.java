@@ -3,10 +3,14 @@ public class Cookie extends BakedGoods{
     private boolean healthier;
     private boolean nuts;
 
-    public Cookie(String name, String baseFlavour, int ovenTemp, boolean healthier, boolean nuts){
-        super(name, baseFlavour, ovenTemp);
+    public Cookie(String name, String baseFlavour, int ovenTemp, boolean icing, boolean healthier, boolean nuts){
+        super(name, baseFlavour, ovenTemp, icing);
         this.healthier = healthier;
         this.nuts = nuts;
+    }
+
+    public String getName(){
+        return this.name;
     }
 
     public String getHealthStatus(){

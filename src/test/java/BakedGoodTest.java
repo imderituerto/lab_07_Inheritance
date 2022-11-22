@@ -10,17 +10,36 @@ public class BakedGoodTest {
         Cake cake;
         Cupcake cupcake;
         Cookie cookie;
+        Shop shop;
 
         @BeforeEach
         public void setUp(){
-            ArrayList<String> toppings = new ArrayList<>();
-            toppings.add("Sprinkles");
-            toppings.add("Sliced almonds");
-            toppings.add("Chocolate buttons");
             cake = new Cake("Victoria sponge", "Vanilla", 180, false, 3);
-            cupcake = new Cupcake("Red cupcake", "Red velvet", 180, true, toppings);
-            cookie = new Cookie("Chocolate chip", "Cookie dough", 180, false, false);
+            cupcake = new Cupcake("Red cupcake", "Red velvet", 180, true);
+            cookie = new Cookie("Chocolate chip", "Cookie dough", 180, false, false, false);
+
+            ArrayList<String> bakedGoodsAvailable = new ArrayList<>();
+            bakedGoodsAvailable.add("Cake");
+            bakedGoodsAvailable.add("Cupcake");
+            bakedGoodsAvailable.add("Cookie");
+            shop = new Shop("BNTA Bakery", bakedGoodsAvailable);
         }
+
+        /*
+        @BeforeEach
+        public void setUp(){
+        championship = new Championship("World Athletics");
+        swimmer = new Swimmer("Jane");
+        triathlete = new Triathlete("Kevin");
+        }
+
+        @Test
+        public void addSwimmer(){
+        championship.addSwimmer(swimmer);
+        championship.addSwimmer(triathlete);
+        assertThat(championship.getSwimmers().size()).isEqualTo(2);
+         }
+         */
 
         @Test
         public void canGetName(){
@@ -43,13 +62,46 @@ public class BakedGoodTest {
             assertThat(cake.getBaseFlavour()).isEqualTo("Chocolate");
         }
         @Test
-        public void canGetOvenTemp(){
+        public void canGetOvenTemp__bakingNeeded(){
             String expected = cake.getOvenTemp();
             assertThat(expected).isEqualTo("Bake me at 180!");
+        }
+
+        @Test
+        public void canGetOvenTemp__bakingNotNeeded(String message){
+            String expected = cake.getOvenTemp();
+            assertThat(expected).isEqualTo("I'm a no-bake cake!");
         }
         @Test
         public void canSetOvenTemp(){
             cake.setOvenTemp(200);
             assertThat(cake.getOvenTemp()).isEqualTo("Bake me at 200!");
         }
+
+        @Test
+        public void canGetIcing(){
+            boolean expected = cookie.getIcing();
+            assertThat(expected).isEqualTo(false);
+        }
+        @Test
+        public void canSetIcing(){
+            cookie.setIcing(true);
+            assertThat(cookie.getIcing()).isEqualTo(true);
+        }
+
+        @Test
+        public void canGetBakedGoodsAvailable(){
+            ArrayList<String> expected = cookie.getBakedGoodsAvailable();
+            expected.add("Cakes, Cookies, Cupcakes");
+            System.out.println(expected);
+//            assertThat(expected).isEqualTo("Chocolate cookie");
+        }
+        @Test void canSetBakedGoodsAvailable(){
+            ArrayList<String> expected = cookie.getBakedGoodsAvailable();
+            expected.remove("Cookies");
+            System.out.println(expected);
+//            cookie.setBakedGoods(expected);
+//            assertThat(cookie.getBakedGoods()).isEqualTo("Chocolate Cookie, Oatmeal cookie");
+        }
+
 }

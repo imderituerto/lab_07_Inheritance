@@ -11,9 +11,9 @@ public class CookieTest {
 
     @BeforeEach
     public void setUp(){
-        cookie1 = new Cookie("Chocolate chip", "Cookie dough", 180, false, false);
-        cookie2 = new Cookie("Oatmeal cookies", "Oats", 180, true, false);
-        cookie3 = new Cookie("Almond cookies", "Almonds", 180, true, true);
+        cookie1 = new Cookie("Chocolate chip", "Cookie dough", 180, false, false, false);
+        cookie2 = new Cookie("Oatmeal cookies", "Oats", 180, true, false, false);
+        cookie3 = new Cookie("Almond cookies", "Almonds", 180, true, true, true);
     }
 
     @Test
